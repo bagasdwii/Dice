@@ -3,6 +3,7 @@ package com.cermat.dice
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -14,8 +15,16 @@ class MainActivity : AppCompatActivity() {
 
         // Set a click listener on the button to roll the dice when the user taps the button
         rollButton.setOnClickListener { rollDice() }
+        SetIdentitas()
     }
-
+fun SetIdentitas(){
+    val nama: TextView =findViewById(R.id.textView1)
+    nama.text = "Bagas Dwi Iantoro"
+    val nim: TextView =findViewById(R.id.textView2)
+    nim.text = "223307066"
+    val kelas: TextView =findViewById(R.id.textView3)
+    kelas.text = "2C"
+}
     /**
      * Roll the dice and update the screen with the result.
      */
@@ -23,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         // Create new Dice object with 6 sides and roll the dice
         val dice = Dice(6)
         val diceRoll = dice.roll()
+
 
         // Find the ImageView in the layout
         val diceImage: ImageView = findViewById(R.id.imageView)
